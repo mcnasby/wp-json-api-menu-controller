@@ -16,6 +16,8 @@ class JSON_API_Menus_Controller {
 	
 	$filtered_items = array_map(function($el){
 		$filter = array(
+			"menu_id"=>$el->ID,
+			"menu_parent_id"=>$el->menu_item_parent,
 			"menu_order"=>$el->menu_order,
 			"label"=>$el->title,
 			"taxonomy_type"=>$el->object,
