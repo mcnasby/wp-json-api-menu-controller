@@ -17,8 +17,7 @@ Custom controller for Wordpress JSON API allowing you to get registered menus
 ### End Point:
 > /get_menu
  
-
-### Optional Arguments (one or the other):
+### Required Arguments (one or the other):
 * **menu_id** - String/Integer (can either be the ID or slug associated with a specific menu)
 * **menu_location** -  String (slug of a menu location)
 
