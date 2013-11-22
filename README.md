@@ -14,20 +14,28 @@ Custom controller for Wordpress JSON API allowing you to get registered menus
 
 ## Usage
 
-### Request:
-> http://www.foo.com/api/get_menu?menu_id=[string]
+### End Point:
+> /get_menu
+ 
 
-### Argument Notes:
-* **menu_id** - this is the menu id that's set when registering a menu (...usually found in your theme file)
+### Optional Arguments (one or the other):
+* **menu_id** - String/Integer (can either be the ID or slug associated with a specific menu)
+* **menu_location** -  String (slug of a menu location)
+
+### Optional Arguments:
 * **dev** - if enabled (eg: dev=1), the output will be the unfiltered wp_get_nav_menu_items object
 
 ### Example Request:
-> http://www.foo.com/api/menus/get_menu/?menu_id=primary
+> http://www.foo.com/api/menus/get_menu/?menu_location=primary
+> http://www.foo.com/api/menus/get_menu/?menu_id=2324
 
 ### Response Object
 * Menu
+    * id - Integer (arbitrary ID associated with current menu item)
+    * menu_parent_id - Integer (if a menu item is set within WP Admin as a parent/child relationship, this id will refer to its parent within the current menu)
     * menu_order - Integer  (note: this is the output of the order set in WP Admin)
-    * label - String
-    * taxonomy_type - String (e.g., category or tag)
-    * taxonomy_id - Integer
+    * label - String 
+    * object_type - String (e.g., category, tag, page, custom, etc)
+    * object_id - Integer (ID used to pull back content from another api, eg: get_page)
+    * url - String (URL for menu items with ‘object_type’ = ‘custom’, ie: custom menu items added in WP Admin)
 
