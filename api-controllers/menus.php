@@ -63,7 +63,7 @@ class JSON_API_Menus_Controller {
 						// This is the correct menu
 						$menuid = $menu->slug;
 
-						var_dump($menu->slug);
+						//var_dump($menu->slug);
 
 						// Get the items for this menu
 						$menu_items = get_nav_items($menuid);
