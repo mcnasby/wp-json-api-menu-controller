@@ -1,4 +1,4 @@
-** This project is no longer being maintained. ***
+This project is no longer being maintained.
 ===========================
 Please contact me if you'd like to take over management of the project.
 
